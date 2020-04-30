@@ -1,0 +1,9 @@
+body {
+    background-color: black;
+}
+
+p {
+    color: lawngreen;
+    white-space: pre-wrap;
+    background-color: black;
+}
