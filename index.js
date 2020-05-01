@@ -48,7 +48,7 @@ function prosessInput() {
             document_console.appendChild(new_node);
             break;
         default:
-            new_node = createText(user_input); // or may be better smth like "kdfksog"
+            new_node = createText("this action is considered impossible in createText()");
             document_console.appendChild(new_node);
             break;
     }
