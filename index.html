@@ -1,13 +1,15 @@
-<html> 
-  <head> 
-    <title>AnnBgn</title> 
-    <link rel="stylesheet" type="text/css" href="./index.css">
-  </head> 
-  <body> 
-          
+<html>
 
+<head>
+    <title>AnnBgn</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+</head>
+
+<body>
+    <div id="overlay"><img src="./static/WG8P.gif"></div>
     <div id="console">
-      </div> 
+        <button onclick="overlay_on()">Turn on overlay effect</button>
+        <input type="text" id="line" onkeydown="if (event.keyCode == 13) prosessInput();">
+    </div>
     <script type="application/javascript" src="./index.js"></script>
-  </body> 
-</html>
+</body></html>

@@ -1,6 +1,6 @@
 function createText(option) {
     var elem = document.createElement('div');
-    switch(option){
+    switch (option) {
         case "initial_info":
             var p = document.createElement('p');
             elem.appendChild(p);
@@ -18,4 +18,21 @@ function createText(option) {
             return elem;
     };
 }
-document.getElementById("console").appendChild(createText("initial_info"));
+
+function prosessInput() {
+    //this.value= '';
+    // this.form.submit();
+    
+    var user_input = document.getElementById("line").value;
+
+}
+
+function overlay_on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function overlay_off() {
+    document.getElementById("overlay").style.display = "none";
+}
+
+document.getElementById("console").insertBefore(createText("initial_info"),document.getElementById("console").lastChild);

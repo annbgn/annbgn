@@ -1,9 +1,46 @@
 body {
     background-color: black;
+    background-image: radial-gradient(rgba(0, 75, 0, 0.75), black 120%);
+    font: Courier, monospace;
+}
+
+div {
+    background: transparent;
 }
 
 p {
-    color: lawngreen;
+    color: Lime;
     white-space: pre-wrap;
     background-color: black;
+    background: transparent;
+    text-shadow: 0 0 5px #C8C8C8;   
+
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+#line {
+    background: transparent;
+    border: 0px solid;
+    color: Lime;
+    caret-color: darkcyan;
+    font: 1.3rem Inconsolata, monospace;
+    text-shadow: 0 0 5px #C8C8C8;
+}
+
+#line:focus {
+    outline: none;
+}
+
+::selection {
+    background: #0080FF;
+    text-shadow: none;
 }
