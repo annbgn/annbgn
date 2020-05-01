@@ -13,8 +13,8 @@ p {
     white-space: pre-wrap;
     background-color: black;
     background: transparent;
-    text-shadow: 0 0 5px #C8C8C8;   
-
+    text-shadow: 0 0 5px #C8C8C8;  
+    display: inline;
 }
 
 #overlay {
@@ -43,4 +43,11 @@ p {
 ::selection {
     background: #0080FF;
     text-shadow: none;
+}
+
+.prompt {
+    display: inline;
+    color: mediumvioletred;
+    font-weight: bold;
+    text-shadow: 0 0 2px palevioletred;   
 }

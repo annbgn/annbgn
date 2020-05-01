@@ -7,9 +7,12 @@
 
 <body>
     <div id="overlay"><img src="./static/WG8P.gif"></div>
+    <br>
     <div id="console">
         <button onclick="overlay_on()">Turn on overlay effect</button>
-        <input type="text" id="line" onkeydown="if (event.keyCode == 13) prosessInput();">
+        <p class="prompt" id='active_prompt'>annbgn>>> </p><input type="text" id="line" onkeydown="if (event.keyCode == 13) prosessInput();">
     </div>
     <script type="application/javascript" src="./index.js"></script>
-</body></html>
+</body>
+
+</html>
