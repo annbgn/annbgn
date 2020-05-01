@@ -25,7 +25,7 @@ function prosessInput() {
     let prompt_copy = document.getElementById("active_prompt");
     let line_copy = document.getElementById("line");
     line_copy.value = '';
-    
+
     let history_prompt = document.createElement('p');
     history_prompt.classList = ['prompt'];
     history_prompt.innerHTML = "annbgn>>> ";
@@ -36,7 +36,7 @@ function prosessInput() {
     document_console.replaceChild(history_command, document.getElementById("line"));
 
     user_input = user_input.toLocaleLowerCase();
-    
+
     let new_node;
     switch (user_input) {
         case '':
@@ -53,7 +53,7 @@ function prosessInput() {
             break;
     }
 
-    
+
     document_console.appendChild(prompt_copy);
     document_console.appendChild(line_copy);
     line_copy.focus();
