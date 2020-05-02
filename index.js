@@ -9,7 +9,7 @@ function createText(option) {
             p.innerHTML = "The following commands are availiable:\n\nhelp\tshow this message and exit\nlinks\tview links to github, habr, etc";
             break;
         case '':
-        default:  //user shouldn't ever get to this default. if it happens, it would be my fault
+        default: //user shouldn't ever get to this default. if it happens, it would be my fault
             break;
     };
     p.innerHTML += "\n";
@@ -28,9 +28,14 @@ function createLinks() {
     link_habr.href = "https://habr.com/ru/users/annbgn/";
     link_habr.innerHTML = "Habr";
 
+    // todo: remove thus dummy link
+    let link_dummy = document.createElement('a');
+    link_dummy.href = "https://vjsdvjsj.com/";
+    link_dummy.innerHTML = "link_dummy never visited";
+
     // todo add link to a normal resume, when it will exist
 
-    let link_array = [link_github, link_habr];
+    let link_array = [link_github, link_habr, link_dummy];
     for (var i = 0; i < link_array.length; i++) {
         elem.appendChild(link_array[i]);
     }
