@@ -3,19 +3,42 @@ function createText(option) {
     let p = document.createElement('p');
     switch (option) {
         case "initial_info":
-            p.innerHTML = "here is initial info about this project\ntype \"help\" for more options";
+            p.innerHTML = "Welcome to AnnBgn CV!\n\nType \"help\" for more options";
             break;
         case "help":
-            p.innerHTML = "the following commands are availiable:\nhelp\tshow this message and exit";
+            p.innerHTML = "The following commands are availiable:\n\nhelp\tshow this message and exit\nlinks\tview links to github, habr, etc";
             break;
         case '':
-            break;
-        default:
-            p.innerHTML = "the command you entered not supported\ntype \"help\" for list of availiable commands";
+        default: //user shouldn't ever get to this default. if it happens, it would be my fault
             break;
     };
     p.innerHTML += "\n";
     elem.appendChild(p);
+    return elem;
+}
+
+function createLinks() {
+    let elem = document.createElement('div');
+
+    let link_github = document.createElement('a');
+    link_github.href = "https://github.com/annbgn";
+    link_github.innerHTML = "Github";
+
+    let link_habr = document.createElement('a');
+    link_habr.href = "https://habr.com/ru/users/annbgn/";
+    link_habr.innerHTML = "Habr";
+
+    // todo: remove thus dummy link
+    let link_dummy = document.createElement('a');
+    link_dummy.href = "https://vjsdvjsj.com/";
+    link_dummy.innerHTML = "link_dummy never visited";
+
+    // todo add link to a normal resume, when it will exist
+
+    let link_array = [link_github, link_habr, link_dummy];
+    for (var i = 0; i < link_array.length; i++) {
+        elem.appendChild(link_array[i]);
+    }
     return elem;
 }
 
@@ -40,15 +63,26 @@ function prosessInput() {
     let new_node;
     switch (user_input) {
         case '':
-            new_node = createText(user_input);
-            document_console.appendChild(new_node);
-            break;
         case "help":
             new_node = createText(user_input);
             document_console.appendChild(new_node);
             break;
+        case "links":
+            new_node = createLinks();
+            document_console.appendChild(new_node);
+            break;
+        case 'contacts':
+        case 'education':
+        case 'skills':
+        case 'practice': // working experience
+        case 'basic info': // photo, "moscow, russia", interests
+        case 'download cv':
+            break;
         default:
-            new_node = createText("this action is considered impossible in createText()");
+            new_node = document.createElement('div');
+            let p = document.createElement('p');
+            p.innerHTML = "The command you entered not supported\nType \"help\" for list of availiable commands\n";
+            new_node.appendChild(p);
             document_console.appendChild(new_node);
             break;
     }

@@ -40,7 +40,7 @@ p {
     font: Courier, monospace;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-family: inherit;
+    font-fami ly: inherit;
 }
 
 #line:focus {
@@ -54,7 +54,40 @@ p {
 
 .prompt {
     display: inline;
-    color: mediumvioletred;
+    color: tomato;
     font-weight: bold;
     text-shadow: 0 0 2px palevioletred;
+}
+
+@keyframes shine {
+    0% {
+        color: #7A9E9F;
+    }
+
+    50% {
+        color: #CEE7E6;
+    }
+
+    100% {
+        color: #7A9E9F;
+    }
+}
+
+a {
+    display: table;
+    font-size: 40px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: PaleGreen;
+    font-size: 1.5rem;
+}
+
+a:hover {
+    animation: shine 1.5s infinite;
+
+}
+
+a:visited {
+    color: 62AB37;
 }
