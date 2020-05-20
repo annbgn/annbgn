@@ -6,7 +6,19 @@ function createText(option) {
             p.innerHTML = "Welcome to AnnBgn CV!\n\nType \"help\" for more options";
             break;
         case "help":
-            p.innerHTML = "The following commands are availiable:\n\nhelp\tshow this message and exit\nlinks\tview links to github, habr, etc";
+            p.innerHTML = "The following commands are availiable:\n\nhelp\t\t\tshow this message and exit\nlinks\t\tview links to github, habr, etc\nclear\t\treload terminal\ncontacts\t\temail and phone\neducation\tschools and university\nskills\t\tlanguages\nbasic info\tinfo and photo"; //todo table
+            break;
+        case 'contacts':
+            p.innerHTML = "fake@mail.com\n+7 111 22 33";
+            break;
+        case 'education':
+            p.innerHTML = "Four different schools, with wide range of in-depth studies: medicine, science and literature\nRussian State University for Himanities, Intelligent Systems Department\nBut self-education is the thing that should be valued";
+            break;
+        case 'skills':
+            p.innerHTML = "Russian native\nEnglish, techinal English mostly\nA little German and French with a great desire to improve\n\nPython native\nC/C++/Dlang\nhtml/css/js\nprolog/lisp\nbash\n\ncurrent interest is cv and image processing";
+            break;
+        case "basic info":
+            p.innerHTML = "Anna\n19 y.o.\nMoscow, Russia";
             break;
         case '':
         default: //user shouldn't ever get to this default. if it happens, it would be my fault
@@ -31,9 +43,9 @@ function createLinks() {
     // todo: remove thus dummy link
     let link_dummy = document.createElement('a');
     link_dummy.href = "https://vjsdvjsj.com/";
-    link_dummy.innerHTML = "link_dummy never visited";
+    link_dummy.innerHTML = "dummy link";
 
-    // todo add link to a normal resume, when it will exist
+    // todo add link to a normal cv, when it will exist
 
     let link_array = [link_github, link_habr, link_dummy];
     for (var i = 0; i < link_array.length; i++) {
@@ -44,6 +56,7 @@ function createLinks() {
 
 function prosessInput() {
     let user_input = document.getElementById("line").value;
+    last_input = user_input;
     let document_console = document.getElementById("console");
     let prompt_copy = document.getElementById("active_prompt");
     let line_copy = document.getElementById("line");
@@ -71,11 +84,31 @@ function prosessInput() {
             new_node = createLinks();
             document_console.appendChild(new_node);
             break;
+        case "clear":
+            window.location.reload(false);
+            return;
         case 'contacts':
+            new_node = createText(user_input);
+            document_console.appendChild(new_node);
+            break;
         case 'education':
+            new_node = createText(user_input);
+            document_console.appendChild(new_node);
+            break;
         case 'skills':
-        case 'practice': // working experience
+            new_node = createText(user_input);
+            document_console.appendChild(new_node);
+            break;
         case 'basic info': // photo, "moscow, russia", interests
+            new_node = createText(user_input);
+            let photo = document.createElement('img');
+            photo.src = 'https://avatars3.githubusercontent.com/u/47499658';
+            let nl = createText('');
+            document_console.appendChild(new_node);
+            document_console.appendChild(photo);
+            document_console.appendChild(nl);
+            break;
+        case 'practice': // working experience
         case 'download cv':
             break;
         default:
@@ -93,6 +126,10 @@ function prosessInput() {
     line_copy.focus();
 }
 
+function memorized_input() {
+    document.getElementById("line").value = last_input;
+}
+
 function overlay_on() {
     document.getElementById("overlay").style.display = "block";
 }
@@ -101,4 +138,5 @@ function overlay_off() {
     document.getElementById("overlay").style.display = "none";
 }
 
+var last_input = ""; //todo list
 document.getElementById("console").insertBefore(createText("initial_info"), document.getElementById("active_prompt"));
