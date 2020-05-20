@@ -10,9 +10,8 @@
     <br>
     <div id="console">
         <button onclick="overlay_on()">Turn on overlay effect</button>
-        <p class="prompt" id='active_prompt'>annbgn>>> </p><input type="text" id="line" onkeydown="if (event.keyCode == 13) prosessInput();" autofocus>
+        <p class="prompt" id='active_prompt'>annbgn>>> </p>
+        <input type="text" id="line" onkeydown="if (event.keyCode == 13) prosessInput(); else if (event.keyCode == 38) memorized_input();" autofocus autocomplete="off">
     </div>
     <script type="application/javascript" src="./index.js"></script>
-</body>
-
-</html>
+</body></html>
