@@ -1,24 +1,30 @@
 function createText(option) {
     let elem = document.createElement('div');
     let p = document.createElement('p');
+
     switch (option) {
         case "initial_info":
             p.innerHTML = "Welcome to AnnBgn CV!\n\nType \"help\" for more options";
             break;
         case "help":
             p.innerHTML = "The following commands are availiable:\n\nhelp\t\t\tshow this message and exit\nlinks\t\tview links to github, habr, etc\nclear\t\treload terminal\ncontacts\t\temail and phone\neducation\tschools and university\nskills\t\tlanguages\nbasic info\tinfo and photo"; //todo table
+            p.classList += ['typewriter-text'];
             break;
         case 'contacts':
             p.innerHTML = "fake@mail.com\n+7 111 22 33";
+            p.classList += ['typewriter-text'];
             break;
         case 'education':
             p.innerHTML = "Four different schools, with wide range of in-depth studies: medicine, science and literature\nRussian State University for Himanities, Intelligent Systems Department\nBut self-education is the thing that should be valued";
+            p.classList += ['typewriter-text'];
             break;
         case 'skills':
             p.innerHTML = "Russian native\nEnglish, techinal English mostly\nA little German and French with a great desire to improve\n\nPython native\nC/C++/Dlang\nhtml/css/js\nprolog/lisp\nbash\n\ncurrent interest is cv and image processing";
+            p.classList += ['typewriter-text'];
             break;
         case "basic info":
             p.innerHTML = "Anna\n19 y.o.\nMoscow, Russia";
+            p.classList += ['typewriter-text'];
             break;
         case '':
         default: //user shouldn't ever get to this default. if it happens, it would be my fault
@@ -115,6 +121,7 @@ function prosessInput() {
             new_node = document.createElement('div');
             let p = document.createElement('p');
             p.innerHTML = "The command you entered not supported\nType \"help\" for list of availiable commands\n";
+            p.classList += ['typewriter-text'];
             new_node.appendChild(p);
             document_console.appendChild(new_node);
             break;
@@ -137,6 +144,7 @@ function overlay_on() {
 function overlay_off() {
     document.getElementById("overlay").style.display = "none";
 }
+
 
 var last_input = ""; //todo list
 document.getElementById("console").insertBefore(createText("initial_info"), document.getElementById("active_prompt"));
