@@ -20,6 +20,7 @@ p {
     margin-bottom: 0px;
 }
 
+
 #overlay {
     position: fixed;
     display: none;
@@ -40,7 +41,7 @@ p {
     font: Courier, monospace;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-fami ly: inherit;
+    font-family: inherit;
 }
 
 #line:focus {
@@ -57,6 +58,7 @@ p {
     color: tomato;
     font-weight: bold;
     text-shadow: 0 0 2px palevioletred;
+    animation: none;
 }
 
 @keyframes shine {
@@ -81,13 +83,49 @@ a {
     text-decoration: none;
     color: PaleGreen;
     font-size: 1.5rem;
+    //animation: typing 4s steps(80, end), blink .75s step-end infinite;
 }
 
 a:hover {
     animation: shine 1.5s infinite;
-
 }
 
 a:visited {
-    color: 62AB37;
+    color: #62AB37;
+}
+
+.typewriter-text {
+    display: inline-block;
+    overflow: hidden;
+    animation: typing 4s steps(80, end), blink .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0%
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+
+button {
+    border-radius: 4px;
+    background: linear-gradient(to right, #CEE7E6, #7A9E9F) !important;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.4s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    animation: shine 2s infinite;
 }
